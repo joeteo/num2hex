@@ -21,13 +21,15 @@ namespace num2hex
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox1_1.Focus();
+            this.textBox1_1.Focus();
+            this.comboBox_integers.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if(this.textBox1_1.Text != "")
             {
+
                 float floatValue;
                 if (float.TryParse(this.textBox1_1.Text, out floatValue))
                 {
@@ -38,7 +40,7 @@ namespace num2hex
                         Array.Reverse(floatBytes);
                     }
                     uint hexValue = BitConverter.ToUInt32(floatBytes, 0);
-                    string hexString = hexValue.ToString("X");
+                    string hexString = hexValue.ToString("X8");
                     if(this.radioButton_0x.Checked)
                     {
                         this.textBox1_2.Text = "0x" + hexString.ToUpper();
@@ -80,6 +82,113 @@ namespace num2hex
                 }
  
             }
+        }
+
+        private void comboBox_integers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedText = this.comboBox_integers.SelectedItem.ToString();
+
+            if (selectedText == "int8_t")
+            {
+                this.label_integer_range.Text = "-128 ~ 127";
+            }
+            else if (selectedText == "uint8_t")
+            {
+                this.label_integer_range.Text = "0 ~ 255";
+            }
+            else if (selectedText == "int16_t")
+            {
+                this.label_integer_range.Text = "-32,768 ~ 32,767";
+            }
+            else if (selectedText == "uint16_t")
+            {
+                this.label_integer_range.Text = "0 ~ 65,535";
+            }
+            else if (selectedText == "int32_t")
+            {
+                this.label_integer_range.Text = "-2,147,483,648 ~ 2,147,483,647";
+            }
+            else if (selectedText == "uint32_t")
+            {
+                this.label_integer_range.Text = "0 ~ 4,294,967,295";
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.textBox3_1.Text != "")
+            {
+                string selectedText = this.comboBox_integers.SelectedItem.ToString();
+                string inputString = this.textBox3_1.Text;
+                bool parseResult = false;
+                string hexString = "";
+
+                if (selectedText == "int8_t")
+                {
+                    if(parseResult = sbyte.TryParse(inputString, out sbyte val))
+                    {
+                        hexString = val.ToString("X2");
+                    }
+                }
+                else if (selectedText == "uint8_t")
+                {
+                    if(parseResult = byte.TryParse(inputString, out byte val))
+                    {
+                        hexString = val.ToString("X2");
+                    }
+                }
+                else if (selectedText == "int16_t")
+                {
+                    if(parseResult = short.TryParse(inputString, out short val))
+                    {
+                        hexString = val.ToString("X4");
+                    }
+                }
+                else if (selectedText == "uint16_t")
+                {
+                    if(parseResult = ushort.TryParse(inputString, out ushort val))
+                    {
+                        hexString = val.ToString("X4");
+                    }
+                }
+                else if (selectedText == "int32_t")
+                {
+                    if(parseResult = int.TryParse(inputString, out int val))
+                    {
+                        hexString = val.ToString("X8");
+                    }
+                }
+                else if (selectedText == "uint32_t")
+                {
+                    if(parseResult = uint.TryParse(inputString, out uint val))
+                    {
+                        hexString = val.ToString("X8");
+                    }
+                }
+
+                if(parseResult)
+                {
+                    if (this.radioButton_0x.Checked)
+                    {
+                        this.textBox3_2.Text = "0x" + hexString.ToUpper();
+                    }
+                    else
+                    {
+                        string[] tokens = Enumerable.Range(0, hexString.Length / 2).Select(x => hexString.Substring(x * 2, 2)).ToArray();
+                        this.textBox3_2.Text = string.Join(" ", tokens);
+                    }
+                }
+                else
+                {
+                    this.textBox3_2.Text = "ERROR";
+                }
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

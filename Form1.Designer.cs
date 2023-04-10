@@ -55,17 +55,22 @@
             this.label3_3 = new System.Windows.Forms.Label();
             this.textBox4_1 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox3_2 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label3_2 = new System.Windows.Forms.Label();
             this.label3_1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3_1 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label_integer_range = new System.Windows.Forms.Label();
+            this.comboBox_integers = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1_1
@@ -126,7 +131,7 @@
             this.radioButton_Little.AutoSize = true;
             this.radioButton_Little.Checked = true;
             this.radioButton_Little.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_Little.Location = new System.Drawing.Point(89, 4);
+            this.radioButton_Little.Location = new System.Drawing.Point(121, 4);
             this.radioButton_Little.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_Little.Name = "radioButton_Little";
             this.radioButton_Little.Size = new System.Drawing.Size(98, 20);
@@ -139,7 +144,7 @@
             // 
             this.radioButton_Big.AutoSize = true;
             this.radioButton_Big.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_Big.Location = new System.Drawing.Point(244, 4);
+            this.radioButton_Big.Location = new System.Drawing.Point(261, 4);
             this.radioButton_Big.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_Big.Name = "radioButton_Big";
             this.radioButton_Big.Size = new System.Drawing.Size(89, 20);
@@ -164,9 +169,9 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 16);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Endian  :";
+            this.label3.Text = "Endian :";
             // 
             // panel1
             // 
@@ -185,16 +190,16 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 16);
+            this.label4.Size = new System.Drawing.Size(89, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "View as :";
+            this.label4.Text = "View Hex as :";
             // 
             // radioButton_0x
             // 
             this.radioButton_0x.AutoSize = true;
             this.radioButton_0x.Checked = true;
             this.radioButton_0x.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_0x.Location = new System.Drawing.Point(89, 6);
+            this.radioButton_0x.Location = new System.Drawing.Point(121, 6);
             this.radioButton_0x.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_0x.Name = "radioButton_0x";
             this.radioButton_0x.Size = new System.Drawing.Size(77, 20);
@@ -207,7 +212,7 @@
             // 
             this.radioButton_space.AutoSize = true;
             this.radioButton_space.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_space.Location = new System.Drawing.Point(244, 6);
+            this.radioButton_space.Location = new System.Drawing.Point(261, 6);
             this.radioButton_space.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_space.Name = "radioButton_space";
             this.radioButton_space.Size = new System.Drawing.Size(124, 20);
@@ -307,7 +312,7 @@
             this.panel5.Controls.Add(this.label3_4);
             this.panel5.Controls.Add(this.label3_3);
             this.panel5.Controls.Add(this.textBox4_1);
-            this.panel5.Location = new System.Drawing.Point(17, 506);
+            this.panel5.Location = new System.Drawing.Point(17, 496);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(423, 100);
@@ -335,6 +340,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Convert";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label3_4
             // 
@@ -369,27 +375,27 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Window;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.textBox3_2);
             this.panel6.Controls.Add(this.button3);
             this.panel6.Controls.Add(this.label3_2);
             this.panel6.Controls.Add(this.label3_1);
-            this.panel6.Controls.Add(this.textBox4);
-            this.panel6.Location = new System.Drawing.Point(17, 398);
+            this.panel6.Controls.Add(this.textBox3_1);
+            this.panel6.Location = new System.Drawing.Point(17, 388);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(423, 100);
             this.panel6.TabIndex = 10;
             // 
-            // textBox3
+            // textBox3_2
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(179, 49);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 1;
+            this.textBox3_2.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3_2.Location = new System.Drawing.Point(179, 49);
+            this.textBox3_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3_2.Name = "textBox3_2";
+            this.textBox3_2.ReadOnly = true;
+            this.textBox3_2.Size = new System.Drawing.Size(100, 22);
+            this.textBox3_2.TabIndex = 1;
             // 
             // button3
             // 
@@ -402,6 +408,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Convert";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3_2
             // 
@@ -423,20 +430,70 @@
             this.label3_1.TabIndex = 0;
             this.label3_1.Text = "Integer";
             // 
-            // textBox4
+            // textBox3_1
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(17, 49);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 1;
+            this.textBox3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3_1.Location = new System.Drawing.Point(17, 49);
+            this.textBox3_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3_1.Name = "textBox3_1";
+            this.textBox3_1.Size = new System.Drawing.Size(100, 22);
+            this.textBox3_1.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label_integer_range);
+            this.panel7.Controls.Add(this.comboBox_integers);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Location = new System.Drawing.Point(17, 333);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(423, 39);
+            this.panel7.TabIndex = 13;
+            // 
+            // label_integer_range
+            // 
+            this.label_integer_range.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_integer_range.Location = new System.Drawing.Point(204, 9);
+            this.label_integer_range.Name = "label_integer_range";
+            this.label_integer_range.Size = new System.Drawing.Size(216, 24);
+            this.label_integer_range.TabIndex = 13;
+            this.label_integer_range.Text = "-128 ~ 127";
+            this.label_integer_range.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox_integers
+            // 
+            this.comboBox_integers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_integers.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_integers.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_integers.FormattingEnabled = true;
+            this.comboBox_integers.Items.AddRange(new object[] {
+            "int8_t",
+            "uint8_t",
+            "int16_t",
+            "uint16_t",
+            "int32_t",
+            "uint32_t"});
+            this.comboBox_integers.Location = new System.Drawing.Point(99, 9);
+            this.comboBox_integers.Name = "comboBox_integers";
+            this.comboBox_integers.Size = new System.Drawing.Size(99, 24);
+            this.comboBox_integers.TabIndex = 12;
+            this.comboBox_integers.SelectedIndexChanged += new System.EventHandler(this.comboBox_integers_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Select Type :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 328);
+            this.ClientSize = new System.Drawing.Size(462, 611);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -461,6 +518,8 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -494,11 +553,15 @@
         private System.Windows.Forms.Label label3_3;
         private System.Windows.Forms.TextBox textBox4_1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox3_2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3_2;
         private System.Windows.Forms.Label label3_1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3_1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label_integer_range;
+        private System.Windows.Forms.ComboBox comboBox_integers;
+        private System.Windows.Forms.Label label1;
     }
 }
 
