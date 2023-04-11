@@ -165,6 +165,17 @@ namespace num2hex
                         hexString = val.ToString("X8");
                     }
                 }
+                
+                if(this.radioButton_Little.Checked && (selectedText == "int16_t" || selectedText == "uint16_t"))
+                {
+                    string tempString = hexString.Substring(2, 2) + hexString.Substring(0, 2);
+                    hexString = tempString;
+                }
+                else if(this.radioButton_Little.Checked && (selectedText == "int32_t" || selectedText == "uint32_t"))
+                {
+                    string tempString = hexString.Substring(6, 2) + hexString.Substring(4, 2) + hexString.Substring(2, 2) + hexString.Substring(0, 2);
+                    hexString = tempString;
+                }
 
                 if(parseResult)
                 {
@@ -188,7 +199,56 @@ namespace num2hex
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (this.textBox4_1.Text != "")
+            {
+                string selectedText = this.comboBox_integers.SelectedItem.ToString();
+                string hexString = this.textBox4_1.Text;
+                hexString = hexString.Replace("0x", "");
+                hexString = hexString.Replace(" ", "");
 
+                if (Regex.IsMatch(hexString, "^[0-9a-fA-F]{1,8}$"))
+                {
+                    byte[] integerBytes = Enumerable.Range(0, hexString.Length).Where(x => x % 2 == 0).Select(x => Convert.ToByte(hexString.Substring(x, 2), 16)).ToArray();
+                    if (this.radioButton_Big.Checked)
+                    {
+                        Array.Reverse(integerBytes);
+                    }
+
+                    if (selectedText == "int8_t")
+                    {
+
+                    }
+                    else if (selectedText == "uint8_t")
+                    {
+
+                    }
+                    else if (selectedText == "int16_t")
+                    {
+
+                    }
+                    else if (selectedText == "uint16_t")
+                    {
+
+                    }
+                    else if (selectedText == "int32_t")
+                    {
+
+                    }
+                    else if (selectedText == "uint32_t")
+                    {
+
+                    }
+
+
+                    //float floatValue = BitConverter.ToSingle(floatBytes, 0);
+                    //this.textBox4_2.Text = floatValue.ToString();
+                }
+                else
+                {
+                    this.textBox4_2.Text = "ERROR";
+                }
+
+            }
         }
     }
 }
