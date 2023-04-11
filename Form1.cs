@@ -216,32 +216,33 @@ namespace num2hex
 
                     if (selectedText == "int8_t")
                     {
-
+                        sbyte sbyteValue = (sbyte)integerBytes[0];
+                        this.textBox4_2.Text = sbyteValue.ToString();
                     }
                     else if (selectedText == "uint8_t")
                     {
-
+                        this.textBox4_2.Text = integerBytes[0].ToString();
                     }
                     else if (selectedText == "int16_t")
                     {
-
+                        short shortValue = BitConverter.ToInt16(integerBytes, 0);
+                        this.textBox4_2.Text = shortValue.ToString();
                     }
                     else if (selectedText == "uint16_t")
                     {
-
+                        ushort ushortValue = BitConverter.ToUInt16(integerBytes, 0);
+                        this.textBox4_2.Text = ushortValue.ToString();
                     }
                     else if (selectedText == "int32_t")
                     {
-
+                        int intValue = BitConverter.ToInt32(integerBytes, 0);
+                        this.textBox4_2.Text = intValue.ToString();
                     }
                     else if (selectedText == "uint32_t")
                     {
-
+                        uint uintValue = BitConverter.ToUInt32(integerBytes, 0);
+                        this.textBox4_2.Text = uintValue.ToString();
                     }
-
-
-                    //float floatValue = BitConverter.ToSingle(floatBytes, 0);
-                    //this.textBox4_2.Text = floatValue.ToString();
                 }
                 else
                 {
