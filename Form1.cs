@@ -68,6 +68,11 @@ namespace num2hex
 
                 if (Regex.IsMatch(hexString, "^[0-9a-fA-F]{1,8}$"))
                 {
+                    if(hexString.Length < 8)
+                    {
+                        hexString = hexString.PadLeft(8, '0');
+                    }
+
                     byte[] floatBytes = Enumerable.Range(0, hexString.Length).Where(x => x % 2 == 0).Select(x => Convert.ToByte(hexString.Substring(x, 2), 16)).ToArray();
                     if (this.radioButton_Big.Checked)
                     {
@@ -206,7 +211,24 @@ namespace num2hex
                 hexString = hexString.Replace("0x", "");
                 hexString = hexString.Replace(" ", "");
 
-                if (Regex.IsMatch(hexString, "^[0-9a-fA-F]{1,8}$"))
+                string maxStr = "";
+                string regexStr = "";
+                if(selectedText == "int8_t" || selectedText == "uint8_t")
+                {
+                    maxStr = "2";
+                }
+                else if (selectedText == "int16_t" || selectedText == "uint16_t")
+                {
+                    maxStr = "4";
+                }
+                else if (selectedText == "int32_t" || selectedText == "uint32_t")
+                {
+                    maxStr = "8";
+                }
+
+                regexStr = "^[0-9a-fA-F]{1,"+maxStr+"}$";
+
+                if (Regex.IsMatch(hexString, regexStr))
                 {
                     byte[] integerBytes = Enumerable.Range(0, hexString.Length).Where(x => x % 2 == 0).Select(x => Convert.ToByte(hexString.Substring(x, 2), 16)).ToArray();
                     if (this.radioButton_Big.Checked)
