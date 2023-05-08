@@ -22,7 +22,7 @@ namespace num2hex
         private void Form1_Load(object sender, EventArgs e)
         {
             this.textBox1_1.Focus();
-            this.comboBox_integers.SelectedIndex = 0;
+            this.comboBox_decimal.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,33 +84,33 @@ namespace num2hex
             }
         }
 
-        private void comboBox_integers_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_decimal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedText = this.comboBox_integers.SelectedItem.ToString();
+            string selectedText = this.comboBox_decimal.SelectedItem.ToString();
 
             if (selectedText == "int8_t")
             {
-                this.label_integer_range.Text = "-128 ~ 127";
+                this.label_decimal_range.Text = "-128 ~ 127";
             }
             else if (selectedText == "uint8_t")
             {
-                this.label_integer_range.Text = "0 ~ 255";
+                this.label_decimal_range.Text = "0 ~ 255";
             }
             else if (selectedText == "int16_t")
             {
-                this.label_integer_range.Text = "-32,768 ~ 32,767";
+                this.label_decimal_range.Text = "-32,768 ~ 32,767";
             }
             else if (selectedText == "uint16_t")
             {
-                this.label_integer_range.Text = "0 ~ 65,535";
+                this.label_decimal_range.Text = "0 ~ 65,535";
             }
             else if (selectedText == "int32_t")
             {
-                this.label_integer_range.Text = "-2,147,483,648 ~ 2,147,483,647";
+                this.label_decimal_range.Text = "-2,147,483,648 ~ 2,147,483,647";
             }
             else if (selectedText == "uint32_t")
             {
-                this.label_integer_range.Text = "0 ~ 4,294,967,295";
+                this.label_decimal_range.Text = "0 ~ 4,294,967,295";
             }
         }
 
@@ -118,7 +118,7 @@ namespace num2hex
         {
             if (this.textBox3_1.Text != "")
             {
-                string selectedText = this.comboBox_integers.SelectedItem.ToString();
+                string selectedText = this.comboBox_decimal.SelectedItem.ToString();
                 string inputString = this.textBox3_1.Text;
                 bool parseResult = false;
                 string hexString = "";
@@ -201,46 +201,46 @@ namespace num2hex
         {
             if (this.textBox4_1.Text != "")
             {
-                string selectedText = this.comboBox_integers.SelectedItem.ToString();
+                string selectedText = this.comboBox_decimal.SelectedItem.ToString();
                 string hexString = this.textBox4_1.Text;
                 hexString = hexString.Replace("0x", "");
                 hexString = hexString.Replace(" ", "");
 
                 if (Regex.IsMatch(hexString, "^[0-9a-fA-F]{1,8}$"))
                 {
-                    byte[] integerBytes = Enumerable.Range(0, hexString.Length).Where(x => x % 2 == 0).Select(x => Convert.ToByte(hexString.Substring(x, 2), 16)).ToArray();
+                    byte[] decimalBytes = Enumerable.Range(0, hexString.Length).Where(x => x % 2 == 0).Select(x => Convert.ToByte(hexString.Substring(x, 2), 16)).ToArray();
                     if (this.radioButton_Big.Checked)
                     {
-                        Array.Reverse(integerBytes);
+                        Array.Reverse(decimalBytes);
                     }
 
                     if (selectedText == "int8_t")
                     {
-                        sbyte sbyteValue = (sbyte)integerBytes[0];
+                        sbyte sbyteValue = (sbyte)decimalBytes[0];
                         this.textBox4_2.Text = sbyteValue.ToString();
                     }
                     else if (selectedText == "uint8_t")
                     {
-                        this.textBox4_2.Text = integerBytes[0].ToString();
+                        this.textBox4_2.Text = decimalBytes[0].ToString();
                     }
                     else if (selectedText == "int16_t")
                     {
-                        short shortValue = BitConverter.ToInt16(integerBytes, 0);
+                        short shortValue = BitConverter.ToInt16(decimalBytes, 0);
                         this.textBox4_2.Text = shortValue.ToString();
                     }
                     else if (selectedText == "uint16_t")
                     {
-                        ushort ushortValue = BitConverter.ToUInt16(integerBytes, 0);
+                        ushort ushortValue = BitConverter.ToUInt16(decimalBytes, 0);
                         this.textBox4_2.Text = ushortValue.ToString();
                     }
                     else if (selectedText == "int32_t")
                     {
-                        int intValue = BitConverter.ToInt32(integerBytes, 0);
+                        int intValue = BitConverter.ToInt32(decimalBytes, 0);
                         this.textBox4_2.Text = intValue.ToString();
                     }
                     else if (selectedText == "uint32_t")
                     {
-                        uint uintValue = BitConverter.ToUInt32(integerBytes, 0);
+                        uint uintValue = BitConverter.ToUInt32(decimalBytes, 0);
                         this.textBox4_2.Text = uintValue.ToString();
                     }
                 }

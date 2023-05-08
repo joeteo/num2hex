@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1_1 = new System.Windows.Forms.Label();
             this.label1_2 = new System.Windows.Forms.Label();
             this.textBox1_1 = new System.Windows.Forms.TextBox();
@@ -61,8 +62,8 @@
             this.label3_1 = new System.Windows.Forms.Label();
             this.textBox3_1 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label_integer_range = new System.Windows.Forms.Label();
-            this.comboBox_integers = new System.Windows.Forms.ComboBox();
+            this.label_decimal_range = new System.Windows.Forms.Label();
+            this.comboBox_decimal = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -441,42 +442,42 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label_integer_range);
-            this.panel7.Controls.Add(this.comboBox_integers);
+            this.panel7.Controls.Add(this.label_decimal_range);
+            this.panel7.Controls.Add(this.comboBox_decimal);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Location = new System.Drawing.Point(17, 333);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(423, 39);
             this.panel7.TabIndex = 13;
             // 
-            // label_integer_range
+            // label_decimal_range
             // 
-            this.label_integer_range.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_integer_range.Location = new System.Drawing.Point(204, 9);
-            this.label_integer_range.Name = "label_integer_range";
-            this.label_integer_range.Size = new System.Drawing.Size(216, 24);
-            this.label_integer_range.TabIndex = 13;
-            this.label_integer_range.Text = "-128 ~ 127";
-            this.label_integer_range.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_decimal_range.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_decimal_range.Location = new System.Drawing.Point(204, 9);
+            this.label_decimal_range.Name = "label_decimal_range";
+            this.label_decimal_range.Size = new System.Drawing.Size(216, 24);
+            this.label_decimal_range.TabIndex = 13;
+            this.label_decimal_range.Text = "-128 ~ 127";
+            this.label_decimal_range.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox_integers
+            // comboBox_decimal
             // 
-            this.comboBox_integers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_integers.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_integers.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBox_integers.FormattingEnabled = true;
-            this.comboBox_integers.Items.AddRange(new object[] {
+            this.comboBox_decimal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_decimal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_decimal.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBox_decimal.FormattingEnabled = true;
+            this.comboBox_decimal.Items.AddRange(new object[] {
             "int8_t",
             "uint8_t",
             "int16_t",
             "uint16_t",
             "int32_t",
             "uint32_t"});
-            this.comboBox_integers.Location = new System.Drawing.Point(99, 9);
-            this.comboBox_integers.Name = "comboBox_integers";
-            this.comboBox_integers.Size = new System.Drawing.Size(99, 24);
-            this.comboBox_integers.TabIndex = 12;
-            this.comboBox_integers.SelectedIndexChanged += new System.EventHandler(this.comboBox_integers_SelectedIndexChanged);
+            this.comboBox_decimal.Location = new System.Drawing.Point(99, 9);
+            this.comboBox_decimal.Name = "comboBox_decimal";
+            this.comboBox_decimal.Size = new System.Drawing.Size(99, 24);
+            this.comboBox_decimal.TabIndex = 12;
+            this.comboBox_decimal.SelectedIndexChanged += new System.EventHandler(this.comboBox_decimal_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -502,9 +503,10 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "float2hex v0.1 by SH Jo";
+            this.Text = "Hex Converter v1.0 by SH Jo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -559,8 +561,8 @@
         private System.Windows.Forms.Label label3_1;
         private System.Windows.Forms.TextBox textBox3_1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label_integer_range;
-        private System.Windows.Forms.ComboBox comboBox_integers;
+        private System.Windows.Forms.Label label_decimal_range;
+        private System.Windows.Forms.ComboBox comboBox_decimal;
         private System.Windows.Forms.Label label1;
     }
 }
