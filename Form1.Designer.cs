@@ -135,7 +135,7 @@
             this.radioButton_Little.Location = new System.Drawing.Point(121, 4);
             this.radioButton_Little.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_Little.Name = "radioButton_Little";
-            this.radioButton_Little.Size = new System.Drawing.Size(98, 20);
+            this.radioButton_Little.Size = new System.Drawing.Size(97, 20);
             this.radioButton_Little.TabIndex = 4;
             this.radioButton_Little.TabStop = true;
             this.radioButton_Little.Text = "Little Endian";
@@ -148,7 +148,7 @@
             this.radioButton_Big.Location = new System.Drawing.Point(261, 4);
             this.radioButton_Big.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_Big.Name = "radioButton_Big";
-            this.radioButton_Big.Size = new System.Drawing.Size(89, 20);
+            this.radioButton_Big.Size = new System.Drawing.Size(88, 20);
             this.radioButton_Big.TabIndex = 4;
             this.radioButton_Big.Text = "Big Endian";
             this.radioButton_Big.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(55, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Endian :";
             // 
@@ -191,7 +191,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "View Hex as :";
             // 
@@ -203,7 +203,7 @@
             this.radioButton_0x.Location = new System.Drawing.Point(121, 6);
             this.radioButton_0x.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_0x.Name = "radioButton_0x";
-            this.radioButton_0x.Size = new System.Drawing.Size(77, 20);
+            this.radioButton_0x.Size = new System.Drawing.Size(76, 20);
             this.radioButton_0x.TabIndex = 4;
             this.radioButton_0x.TabStop = true;
             this.radioButton_0x.Text = "0x Prefix";
@@ -216,7 +216,7 @@
             this.radioButton_space.Location = new System.Drawing.Point(261, 6);
             this.radioButton_space.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton_space.Name = "radioButton_space";
-            this.radioButton_space.Size = new System.Drawing.Size(124, 20);
+            this.radioButton_space.Size = new System.Drawing.Size(123, 20);
             this.radioButton_space.TabIndex = 4;
             this.radioButton_space.Text = "Space-separated";
             this.radioButton_space.UseVisualStyleBackColor = true;
@@ -485,7 +485,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Select Type :";
             // 
@@ -493,7 +493,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 611);
+            this.ClientSize = new System.Drawing.Size(462, 606);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
